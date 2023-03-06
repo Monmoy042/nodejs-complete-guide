@@ -6,18 +6,25 @@ const expressHbs = require("express-handlebars");
 
 const app = express();
 
-app.engine(
-  "hbs",
-  expressHbs({
-    layoutsDir: "views/layouts/",
-    defaultLayout: "main-layout",
-    extname: "hbs",
-  })
-);
-app.set("view engine", "hbs");
-
-// app.set("view engine", "pug");
+// ejs
+app.set("view engine", "ejs");
 app.set("views", "views");
+
+// Handlebars
+// app.engine(
+//   "hbs",
+//   expressHbs({
+//     layoutsDir: "views/layouts/",
+//     defaultLayout: "main-layout",
+//     extname: "hbs",
+//   })
+// );
+// app.set("view engine", "hbs");
+// app.set("views", "views");
+
+// Pug
+// app.set("view engine", "pug");
+// app.set("views", "views");
 
 const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
